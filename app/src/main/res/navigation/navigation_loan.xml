@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_loan"
+    app:startDestination="@id/loanListFragment">
+
+    <fragment
+        android:id="@+id/loanListFragment"
+        android:name="id.calocallo.loanapp.presentation.LoanListFragment"
+        android:label="Loan List"
+        tools:layout="@layout/fragment_loan_list" >
+        <action
+            android:id="@+id/action_loanListFragment_to_loanDetailFragment"
+            app:destination="@id/loanDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loanDetailFragment"
+        android:name="id.calocallo.loanapp.presentation.LoanDetailFragment"
+        android:label="Loan Detail"
+        tools:layout="@layout/fragment_loan_detail" >
+        <action
+            android:id="@+id/action_loanDetailFragment_to_loanDocumentFragment"
+            app:destination="@id/loanDocumentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loanDocumentFragment"
+        android:name="id.calocallo.loanapp.presentation.LoanDocumentFragment"
+        android:label="Loan Document"
+        tools:layout="@layout/fragment_loan_document" />
+</navigation>
