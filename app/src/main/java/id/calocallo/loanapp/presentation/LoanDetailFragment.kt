@@ -1,27 +1,25 @@
 package id.calocallo.loanapp.presentation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import id.calocallo.loanapp.R
 import id.calocallo.loanapp.databinding.FragmentLoanDetailBinding
-import id.calocallo.loanapp.databinding.LayoutInstallmentItemBinding
-import id.calocallo.loanapp.domain.Installment
 import id.calocallo.loanapp.domain.Loan
 
 class LoanDetailFragment : Fragment() {
-
     private lateinit var binding: FragmentLoanDetailBinding
 
     private var installmentAdapter = LoanInstallmentAdapter(emptyList())
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentLoanDetailBinding.inflate(inflater, container, false)
         return binding.root
@@ -44,7 +42,6 @@ class LoanDetailFragment : Fragment() {
                 installmentAdapter = LoanInstallmentAdapter(it.repaymentSchedule.installment)
                 rvLoanDetailInstallment.adapter = installmentAdapter
 
-
                 // Docs
                 if (it.documents.isEmpty()) {
                     tvLoanDetailDocuments.text = "-"
@@ -55,7 +52,7 @@ class LoanDetailFragment : Fragment() {
                             val bundle = bundleOf("LOAN_DOCUMENTS" to loan.documents.firstOrNull())
                             findNavController().navigate(
                                 R.id.action_loanDetailFragment_to_loanDocumentFragment,
-                                bundle
+                                bundle,
                             )
                         }
                     }
@@ -63,34 +60,4 @@ class LoanDetailFragment : Fragment() {
             }
         }
     }
-}
-
-class LoanInstallmentAdapter(
-    private val installmentList: List<Installment>
-) : RecyclerView.Adapter<LoanInstallmentAdapter.Holder>() {
-    inner class Holder(val binding: LayoutInstallmentItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun bind(installment: Installment) {
-            with(binding) {
-                tvInstallmentItemDueDate.text = "Due Date: ${installment.dueDate}"
-                tvInstallmentItemAmount.text = "Amount Due: ${installment.amountDue}"
-            }
-        }
-
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val binding =
-            LayoutInstallmentItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return Holder(binding)
-    }
-
-    override fun getItemCount(): Int = installmentList.size
-
-    override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.bind(installmentList[position])
-
-        holder.binding.tvInstallmentItemName.text = "Installment #${position + 1}"
-    }
-
 }
