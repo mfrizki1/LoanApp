@@ -3,6 +3,7 @@ package id.calocallo.loanapp.presentation
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import id.calocallo.loanapp.R
 import id.calocallo.loanapp.databinding.LayoutInstallmentItemBinding
 import id.calocallo.loanapp.domain.Installment
 
@@ -14,8 +15,10 @@ class LoanInstallmentAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(installment: Installment) {
             with(binding) {
-                tvInstallmentItemDueDate.text = "Due Date: ${installment.dueDate}"
-                tvInstallmentItemAmount.text = "Amount Due: ${installment.amountDue}"
+                tvInstallmentItemDueDate.text =
+                    root.context.getString(R.string.installment_due_date_value, installment.dueDate)
+                tvInstallmentItemAmount.text =
+                    root.context.getString(R.string.installment_amount_value)
             }
         }
     }
@@ -37,6 +40,10 @@ class LoanInstallmentAdapter(
     ) {
         holder.bind(installmentList[position])
 
-        holder.binding.tvInstallmentItemName.text = "Installment #${position + 1}"
+        holder.binding.tvInstallmentItemName.text =
+            holder.binding.root.context.getString(
+                R.string.installment_number_value,
+                position + 1,
+            )
     }
 }

@@ -13,6 +13,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="@dimen/_8sdp"
-        android:text="Filter" />
+        android:text="@string/filter" />
 
 </com.google.android.material.card.MaterialCardView>

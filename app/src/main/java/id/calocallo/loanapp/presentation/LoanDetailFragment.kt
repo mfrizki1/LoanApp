@@ -34,9 +34,15 @@ class LoanDetailFragment : Fragment() {
             loan?.let {
                 tvLoanDetailName.text = it.borrower.name
                 tvLoanDetailEmail.text = it.borrower.email
-                tvLoanDetailCollateralType.text = "Collateral Type: ${it.collateral.type}"
-                tvLoanDetailCollateralValue.text = "Collateral Value: $${it.collateral.value}"
-                tvLoanDetailCreditScore.text = "Credit Score: ${it.borrower.creditScore}"
+                tvLoanDetailCollateralType.text =
+                    getString(
+                        R.string.loan_detail_collateral_type_value,
+                        it.collateral.type,
+                    )
+                tvLoanDetailCollateralValue.text =
+                    getString(R.string.loan_detail_collateral_value_value, it.collateral.value)
+                tvLoanDetailCreditScore.text =
+                    getString(R.string.loan_detail_credit_score_value, it.borrower.creditScore)
 
                 // Installment
                 installmentAdapter = LoanInstallmentAdapter(it.repaymentSchedule.installment)
@@ -47,7 +53,7 @@ class LoanDetailFragment : Fragment() {
                     tvLoanDetailDocuments.text = "-"
                 } else {
                     tvLoanDetailDocuments.apply {
-                        text = "Open Document"
+                        text = getString(R.string.open_document)
                         setOnClickListener {
                             val bundle = bundleOf("LOAN_DOCUMENTS" to loan.documents.firstOrNull())
                             findNavController().navigate(

@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_8sdp"
-        android:text="Filter Loan" />
+        android:text="@string/filter_loan" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
@@ -41,6 +41,7 @@
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_gravity="center"
+            android:importantForAccessibility="no"
             android:src="@drawable/ic_clear_filter"
             app:tint="@android:color/holo_red_dark" />
 
@@ -54,6 +55,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_6sdp"
-        android:text="Apply" />
+        android:text="@string/apply" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

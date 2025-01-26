@@ -33,8 +33,6 @@ class LoanListFragment : Fragment() {
 
     private var loanList = emptyList<Loan>()
 
-    private var selectedSort: String? = ""
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

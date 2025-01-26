@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">LoanApp</string>
+    <string name="filter">Filter</string>
+
+    <string name="loan_list_name_value">Name: %s</string>
+    <string name="loan_list_amount_value">Amount: %i</string>
+    <string name="loan_list_purpose_value">Purpose: %i</string>
+    <string name="loan_list_term_value">Term: %i Month</string>
+    <string name="loan_list_risk_rating_value">Risk Rating %s</string>
+    <string name="loan_list_interest_rate_value">Interest Rate %f</string>
+
+    <string name="loan_detail_collateral_type_value">Collateral Type: %s</string>
+    <string name="loan_detail_collateral_value_value">Collateral Value: %i</string>
+    <string name="loan_detail_credit_score_value">Credit Score: %i</string>
+
+    <string name="installment_number_value">Installment #%i</string>
+    <string name="installment_due_date_value">Due Date: %s</string>
+    <string name="installment_amount_value">Amount: %s</string>
+    <string name="filter_loan">Filter Loan</string>
+    <string name="apply">Apply</string>
+    <string name="loan_item_name">Name</string>
+
+    <string name="open_document">Open Document</string>
 </resources>

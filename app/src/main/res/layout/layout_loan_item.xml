@@ -20,7 +20,7 @@
             style="@style/TextAppearance.Material3.TitleLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name" />
+            android:text="@string/loan_list_name_value" />
 
         <TextView
             android:id="@+id/tvLoanItemAmount"
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
-            android:text="Amount: $s" />
+            android:text="@string/loan_list_amount_value" />
 
         <TextView
             android:id="@+id/tvLoanItemInterestRate"
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
-            android:text="Interest Rate: $s" />
+            android:text="@string/loan_list_interest_rate_value" />
 
         <TextView
             android:id="@+id/tvLoanItemTermMonth"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
-            android:text="Term Month: $s" />
+            android:text="@string/loan_list_term_value" />
 
         <TextView
             android:id="@+id/tvLoanItemPurpose"
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
-            android:text="Purpose: $s" />
+            android:text="@string/loan_list_purpose_value" />
 
         <TextView
             android:id="@+id/tvLoanItemRiskRating"
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
-            android:text="Risk Rating: $s" />
+            android:text="@string/loan_list_risk_rating_value" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

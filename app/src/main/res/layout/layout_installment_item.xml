@@ -20,7 +20,7 @@
             style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Installment #" />
+            android:text="@string/installment_number_value" />
 
         <View
             android:layout_width="match_parent"
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
-            android:text="Due Date: $s" />
+            android:text="@string/installment_due_date_value" />
 
         <TextView
             android:id="@+id/tvInstallmentItemAmount"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
-            android:text="Installment Amount: $s" />
+            android:text="@string/installment_amount_value" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </com.google.android.material.card.MaterialCardView>
